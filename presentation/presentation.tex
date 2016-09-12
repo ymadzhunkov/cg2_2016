@@ -1,0 +1,80 @@
+\documentclass[serif,mathserif,14pt,aspectratio=169]{beamer}
+%\setbeamercovered{transparent}
+\usepackage{listings}
+\usepackage{amsmath, amsfonts, epsfig, xspace}
+\usepackage{pstricks,pst-node}
+\usepackage{multimedia}
+\usepackage{beamerthemesplit}
+\usetheme{chaosgroup}
+% add bulgarian support
+\usepackage[utf8]{inputenc}
+\usepackage[english,bulgarian]{babel}
+\usepackage[T2B]{fontenc}
+% include subfigure package
+\usepackage[normal,tight,center]{subfigure}
+\setlength{\subfigcapskip}{-.5em}
+
+\usepackage{animate}
+\usepackage{xmpmulti}
+
+\author[Йордан Маджунков]{Йордан Маджунков}
+\title[Test Driven Development\hspace{2em}\insertframenumber/\inserttotalframenumber]{Test Driven Development:\\ Сътворение на качествен код}
+\date{29 Октомври 2016} %leave out for today's date to be insterted
+
+\usebackgroundtemplate {\includegraphics[width=\paperwidth, height=\paperheight]{background.jpg}}
+\defbeamertemplate*{title page}{customized}[1][] {
+
+\setbeamercolor{author}{fg=write}
+\vspace{5cm}
+\begin{center}
+\usebeamerfont{title} \Large \inserttitle\\
+\end{center}
+\begin{center}
+\usebeamerfont{author} \small \insertauthor
+\end{center}
+
+}
+\begin{document}
+
+\maketitle
+
+%\section{Introduction}  % add these to see outline in slides
+\addtobeamertemplate{frametitle}{\vskip-0.5ex}{}
+%\setbeamertemplate{background canvas}[vertical shading][bottom=bottomcolour, middle=middlecolour, top=black]
+\setbeamertemplate{background}
+{\includegraphics[width=\paperwidth,height=\paperheight]{backgroud2.jpg}}
+%\lstset{language=C++,
+%        basicstyle=\ttfamily,
+%        keywordstyle=\color{green}\ttfamily,
+%        stringstyle=\color{red}\ttfamily,
+%        commentstyle=\color{blue}\ttfamily,
+%        morecomment=[l][\color{magenta}]{\#}
+%}
+%\renewcommand*{\thesubfigure}{}
+
+%\section{Въведение} % add these to see outline in slides
+%\include{introduction}
+%\section{Монте Карло} % add these to see outline in slides
+%\include{montecarlo}
+%\include{montecarlo_definition}
+%\include{montecarlo_pi}
+%\include{montecarlo_integration}
+%\include{montecarlo_convergence}
+%\include{montecarlo_trapec}
+%\include{mandelbrod}
+%\section{Вероятност} % add these to see outline in slides
+%\include{probability}
+%\section{Генератори} % add these to see outline in slides
+%\include{generators}
+%\section{Семплиране} % add these to see outline in slides
+%\include{sampling}
+%\section{Намалява на вариацията} % add these to see outline in slides
+%\include{variancereduction}
+%\section{Заключение} % add these to see outline in slides
+%\include{conclusion}
+
+
+%\section{Main Body} % add these to see outline in slides
+
+
+\end{document}
