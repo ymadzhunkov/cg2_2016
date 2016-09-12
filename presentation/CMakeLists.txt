@@ -13,7 +13,6 @@ set(IMAGES background2.jpg background.jpg)
 
 add_latex_document(presentation.tex
   INPUTS CMakeLists.txt
-  IMAGE_DIRS ${CMAKE_SOURCE_DIR}
   IMAGES ${IMAGES}
+  INPUTS introduction.tex badcode.tex
 )
-message("source dir = ${CMAKE_SOURCE_DIR}")

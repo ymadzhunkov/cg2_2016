@@ -1,0 +1,49 @@
+\begin{frame}[fragile]
+  \frametitle{Лош код}\pause
+
+\begin{minipage}[t]{0.48\linewidth}
+\begin{lstlisting}
+bool status;
+if (x > y) {
+    status = true;
+} else {
+    status = false;
+}
+\end{lstlisting}\pause
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\begin{lstlisting}
+bool status = x > y;
+\end{lstlisting}
+\end{minipage}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+  \frametitle{Лош код}\pause
+\begin{minipage}[t]{0.48\linewidth}
+\begin{lstlisting}
+#define D0 48
+...
+write(1, D0 + number);
+\end{lstlisting}\pause
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\begin{lstlisting}
+putchar('0' + number);
+\end{lstlisting}
+\end{minipage}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Лош код}\pause
+\begin{lstlisting}
+strcpy(dst, src);
+if (strcmp(dst,src)) {
+   fprintf(stderr,"strcpy failed");
+   exit(1);
+}
+\end{lstlisting}
+\end{frame}

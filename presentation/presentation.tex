@@ -24,7 +24,6 @@
 \usebackgroundtemplate {\includegraphics[width=\paperwidth, height=\paperheight]{background.jpg}}
 \defbeamertemplate*{title page}{customized}[1][] {
 
-\setbeamercolor{author}{fg=write}
 \vspace{5cm}
 \begin{center}
 \usebeamerfont{title} \Large \inserttitle\\
@@ -42,18 +41,19 @@
 \addtobeamertemplate{frametitle}{\vskip-0.5ex}{}
 %\setbeamertemplate{background canvas}[vertical shading][bottom=bottomcolour, middle=middlecolour, top=black]
 \setbeamertemplate{background}
-{\includegraphics[width=\paperwidth,height=\paperheight]{backgroud2.jpg}}
-%\lstset{language=C++,
-%        basicstyle=\ttfamily,
-%        keywordstyle=\color{green}\ttfamily,
-%        stringstyle=\color{red}\ttfamily,
-%        commentstyle=\color{blue}\ttfamily,
-%        morecomment=[l][\color{magenta}]{\#}
-%}
+{\includegraphics[width=\paperwidth,height=\paperheight]{background2.jpg}}
+\lstset{language=C++,
+        basicstyle=\ttfamily,
+        keywordstyle=\color{green}\ttfamily,
+        stringstyle=\color{red}\ttfamily,
+        commentstyle=\color{blue}\ttfamily,
+        morecomment=[l][\color{magenta}]{\#}
+}
 %\renewcommand*{\thesubfigure}{}
 
 %\section{Въведение} % add these to see outline in slides
-%\include{introduction}
+\include{introduction}
+\include{badcode}
 %\section{Монте Карло} % add these to see outline in slides
 %\include{montecarlo}
 %\include{montecarlo_definition}
