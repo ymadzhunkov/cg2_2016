@@ -8,3 +8,10 @@ TEST_CASE("Create rectangle") {
     REQUIRE(a.width == 10);
     REQUIRE(a.height == 12);
 }
+
+TEST_CASE("Test overlaping rectangles") {
+    Rectangle a(0, 0, 10, 12);
+    Rectangle b(1, 2, 3, 4);
+    bool overlap = a.overlap(b);
+    REQUIRE(overlap == true);
+}
