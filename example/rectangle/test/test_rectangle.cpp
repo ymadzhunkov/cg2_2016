@@ -15,3 +15,10 @@ TEST_CASE("Test overlaping rectangles") {
     bool overlap = a.overlap(b);
     REQUIRE(overlap == true);
 }
+
+TEST_CASE("Test non overlaping rectangles") {
+    Rectangle a(6, 7, 10, 12);
+    Rectangle b(1, 2, 3, 4);
+    bool overlap = a.overlap(b);
+    REQUIRE(overlap == false);
+}
