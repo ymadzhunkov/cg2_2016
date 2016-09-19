@@ -6,5 +6,7 @@ Rectangle::Rectangle(int x, int y, int width, int height)
 
 
 bool Rectangle::overlap(const Rectangle & other) const {
-    return x < other.x + other.width;
+    bool res = x < other.x + other.width;
+    res &= other.x < x + width;
+    return res; 
 }
