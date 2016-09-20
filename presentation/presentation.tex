@@ -1,5 +1,4 @@
 \documentclass[serif,mathserif,14pt,aspectratio=169]{beamer}
-%\setbeamercovered{transparent}
 \usepackage{listings}
 \usepackage{amsmath, amsfonts, epsfig, xspace}
 \usepackage{pstricks,pst-node}
@@ -16,6 +15,7 @@
 
 \usepackage{animate}
 \usepackage{xmpmulti}
+\usepackage{tikz}
 
 \author[Йордан Маджунков]{Йордан Маджунков}
 \title[Test Driven Development\hspace{2em}\insertframenumber/\inserttotalframenumber]{Test Driven Development:\\ Сътворение на качествен код}
@@ -43,7 +43,7 @@
 \setbeamertemplate{background}
 {\includegraphics[width=\paperwidth,height=\paperheight]{background2.jpg}}
 \lstset{language=C++,
-        basicstyle=\ttfamily,
+        basicstyle=\footnotesize, %\ttfamily,
         keywordstyle=\color{green}\ttfamily,
         stringstyle=\color{red}\ttfamily,
         commentstyle=\color{blue}\ttfamily,
@@ -52,32 +52,10 @@
 %\renewcommand*{\thesubfigure}{}
 
 \include{qualitycode}
-\include{tdd}
 \include{tests}
-%\include{badcode}
+\include{tdd}
+\include{tdd-example}
 
-
-%\section{Монте Карло} % add these to see outline in slides
-%\include{montecarlo}
-%\include{montecarlo_definition}
-%\include{montecarlo_pi}
-%\include{montecarlo_integration}
-%\include{montecarlo_convergence}
-%\include{montecarlo_trapec}
-%\include{mandelbrod}
-%\section{Вероятност} % add these to see outline in slides
-%\include{probability}
-%\section{Генератори} % add these to see outline in slides
-%\include{generators}
-%\section{Семплиране} % add these to see outline in slides
-%\include{sampling}
-%\section{Намалява на вариацията} % add these to see outline in slides
-%\include{variancereduction}
-%\section{Заключение} % add these to see outline in slides
-%\include{conclusion}
-
-
-%\section{Main Body} % add these to see outline in slides
 
 
 \end{document}

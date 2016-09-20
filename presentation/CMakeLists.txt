@@ -14,5 +14,5 @@ set(IMAGES background2.jpg background.jpg)
 add_latex_document(presentation.tex
   INPUTS CMakeLists.txt
   IMAGES ${IMAGES}
-  INPUTS qualitycode.tex badcode.tex tests.tex tdd.tex
+  INPUTS qualitycode.tex badcode.tex tests.tex tdd.tex tdd-example.tex
 )
