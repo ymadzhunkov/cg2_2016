@@ -9,35 +9,35 @@ TEST_CASE("Create rectangle") {
     REQUIRE(a.height == 12);
 }
 
-TEST_CASE("Test overlaping rectangles") {
+TEST_CASE("Test overlapping rectangles") {
     Rectangle a(0, 0, 10, 12);
     Rectangle b(1, 2, 3, 4);
     bool overlap = a.overlap(b);
     REQUIRE(overlap == true);
 }
 
-TEST_CASE("Test non overlaping rectangles") {
+TEST_CASE("Test non overlapping rectangles") {
     Rectangle a(6, 7, 10, 12);
     Rectangle b(1, 2, 3, 4);
     bool overlap = a.overlap(b);
     REQUIRE(overlap == false);
 }
 
-TEST_CASE("Test non overlaping rectangles") {
+TEST_CASE("Test non overlapping rectangles") {
     Rectangle a(1, 2, 3, 4);
     Rectangle b(6, 7, 10, 12);
     bool overlap = a.overlap(b);
     REQUIRE(overlap == false);
 }
 
-TEST_CASE("Test non overlaping rectangles") {
+TEST_CASE("Test non overlapping rectangles") {
     Rectangle a(1, 2, 3, 4);
     Rectangle b(1, 7, 10, 12);
     bool overlap = a.overlap(b);
     REQUIRE(overlap == false);
 }
 
-TEST_CASE("Test non overlaping rectangles") {
+TEST_CASE("Test non overlapping rectangles") {
     Rectangle a(1, 7, 10, 12);
     Rectangle b(1, 2, 3, 4);
     bool overlap = a.overlap(b);
