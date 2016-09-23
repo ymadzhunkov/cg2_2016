@@ -2095,22 +2095,339 @@ assertions: 9 | 9 passed | 0 failed\\
 \end{minipage}
 \end{frame}
 
+\begin{frame}[fragile]
+\frametitle{rectangle.cpp}
+\begin{minipage}[t]{0.48\linewidth}
+\begin{lstlisting}
+...
 
-%\begin{frame}[fragile]
-%\frametitle{rectangle.cpp}
-%\begin{lstlisting}
-%#include "rectangle.h"
+bool something(int a0, int b0, int a1, int b1) {
+    return a0 < b1 && b0 < a1;
+}
+bool 
+Rectangle::overlap(const Rectangle &other)const{
+    return something(x, other.x, x + width, 
+                     other.x + other.width) &&
+           something(y, other.y, y + height,
+                     other.y + other.height);
+}
+\end{lstlisting}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.28\linewidth}
+  \small
+  \begin{enumerate} 
+    \item \textcolor{deadcolor}{Write a test}
+    \item \textcolor{deadcolor}{Make it compile}
+    \item \textcolor{deadcolor}{Run it (fails)}
+    \item \textcolor{deadcolor}{Make it pass}
+    \item \textcolor{activecolor}{Improve quality}
+  \end{enumerate} 
+\end{minipage}
+\end{frame}
 
-%Rectangle::Rectangle(int x, int y, int width, int height)
-%    : x(x), y(y), width(width), height(height) {}
+\begin{frame}[fragile]
+\frametitle{rectangle.cpp}
+\begin{minipage}[t]{0.48\linewidth}
+\begin{lstlisting}
+...
 
-%bool overlap1D(int a0, int b0, int a1, int b1) {
-%    return a0 < b1 && b0 < a1;
-%}
+bool overlap1D(int a0, int b0, int a1, int b1) {
+    return a0 < b1 && b0 < a1;
+}
+bool 
+Rectangle::overlap(const Rectangle &other)const{
+    return overlap1D(x, other.x, x + width, 
+                     other.x + other.width) &&
+           overlap1D(y, other.y, y + height,
+                     other.y + other.height);
+}
+\end{lstlisting}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.28\linewidth}
+  \small
+  \begin{enumerate} 
+    \item \textcolor{deadcolor}{Write a test}
+    \item \textcolor{deadcolor}{Make it compile}
+    \item \textcolor{deadcolor}{Run it (fails)}
+    \item \textcolor{deadcolor}{Make it pass}
+    \item \textcolor{activecolor}{Improve quality}
+  \end{enumerate} 
+\end{minipage}
+\end{frame}
 
-%bool Rectangle::overlap(const Rectangle &other) const {
-%    return overlap1D(x, other.x, x + width, other.x + other.width) &&
-%           overlap1D(y, other.y, y + height, other.y + other.height);
-%}
-%\end{lstlisting}
-%\end{frame}
+\begin{frame}[fragile]
+\frametitle{Run doctest}
+\begin{minipage}[t]{0.48\linewidth}
+test cases: 6 | 6 passed | 0 failed\\
+assertions: 9 | 9 passed | 0 failed\\
+\end{minipage}\hfill
+\begin{minipage}[t]{0.28\linewidth}
+  \small
+  \begin{enumerate} 
+    \item \textcolor{deadcolor}{Write a test}
+    \item \textcolor{deadcolor}{Make it compile}
+    \item \textcolor{deadcolor}{Run it (fails)}
+    \item \textcolor{deadcolor}{Make it pass}
+    \item \textcolor{activecolor}{Improve quality}
+  \end{enumerate} 
+\end{minipage}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Can't add failing test}
+\begin{minipage}[t]{0.48\linewidth}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.28\linewidth}
+  \small
+  \begin{enumerate} 
+    \item \textcolor{activecolor}{Write a test}
+    \item \textcolor{deadcolor}{Make it compile}
+    \item \textcolor{deadcolor}{Run it (fails)}
+    \item \textcolor{deadcolor}{Make it pass}
+    \item \textcolor{deadcolor}{Improve quality}
+  \end{enumerate} 
+\end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Can't add failing test}
+\begin{minipage}[t]{0.48\linewidth}
+    Add a BUG!
+\end{minipage}\hfill
+\begin{minipage}[t]{0.28\linewidth}
+  \small
+  \begin{enumerate} 
+    \item \textcolor{activecolor}{Write a test}
+    \item \textcolor{deadcolor}{Make it compile}
+    \item \textcolor{deadcolor}{Run it (fails)}
+    \item \textcolor{deadcolor}{Make it pass}
+    \item \textcolor{deadcolor}{Improve quality}
+  \end{enumerate} 
+\end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{rectangle.cpp}
+\begin{minipage}[t]{0.48\linewidth}
+\begin{lstlisting}
+#include "rectangle.h"
+
+Rectangle::Rectangle(int x, int y, 
+                     int width, int height)
+    : x(x), y(y), width(width), height(height) {}
+
+...
+\end{lstlisting}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.28\linewidth}
+  \small
+  \begin{enumerate} 
+    \item \textcolor{activecolor}{Write a test}
+    \item \textcolor{deadcolor}{Make it compile}
+    \item \textcolor{deadcolor}{Run it (fails)}
+    \item \textcolor{deadcolor}{Make it pass}
+    \item \textcolor{deadcolor}{Improve quality}
+  \end{enumerate} 
+\end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{rectangle.cpp}
+\begin{minipage}[t]{0.48\linewidth}
+\begin{lstlisting}
+#include "rectangle.h"
+
+Rectangle::Rectangle(int x, int y, 
+                     int width, int height)
+    : x(y), y(y), width(width), height(height) {}
+
+...
+\end{lstlisting}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.28\linewidth}
+  \small
+  \begin{enumerate} 
+    \item \textcolor{activecolor}{Write a test}
+    \item \textcolor{deadcolor}{Make it compile}
+    \item \textcolor{deadcolor}{Run it (fails)}
+    \item \textcolor{deadcolor}{Make it pass}
+    \item \textcolor{deadcolor}{Improve quality}
+  \end{enumerate} 
+\end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Run doctest}
+\begin{minipage}[t]{0.48\linewidth}
+test cases: 6 | 6 passed | 0 failed\\
+assertions: 9 | 9 passed | 0 failed\\
+\end{minipage}\hfill
+\begin{minipage}[t]{0.28\linewidth}
+  \small
+  \begin{enumerate} 
+    \item \textcolor{activecolor}{Write a test}
+    \item \textcolor{deadcolor}{Make it compile}
+    \item \textcolor{deadcolor}{Run it (fails)}
+    \item \textcolor{deadcolor}{Make it pass}
+    \item \textcolor{deadcolor}{Improve quality}
+  \end{enumerate} 
+\end{minipage}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{test\_rectangle.cpp}
+\begin{minipage}[t]{0.48\linewidth}
+\begin{lstlisting}
+#include "doctest.h"
+#include "rectangle.h"
+
+TEST_CASE("Create rectangle") {
+    Rectangle a(0, 0, 10, 12);
+    REQUIRE(a.x == 0);
+    REQUIRE(a.y == 0);
+    REQUIRE(a.width == 10);
+    REQUIRE(a.height == 12);
+}
+...
+\end{lstlisting}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.28\linewidth}
+  \small
+  \begin{enumerate} 
+    \item \textcolor{activecolor}{Write a test}
+    \item \textcolor{deadcolor}{Make it compile}
+    \item \textcolor{deadcolor}{Run it (fails)}
+    \item \textcolor{deadcolor}{Make it pass}
+    \item \textcolor{deadcolor}{Improve quality}
+  \end{enumerate} 
+\end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{test\_rectangle.cpp}
+\begin{minipage}[t]{0.48\linewidth}
+\begin{lstlisting}
+#include "doctest.h"
+#include "rectangle.h"
+
+TEST_CASE("Create rectangle") {
+    Rectangle a(1, 0, 10, 12);
+    REQUIRE(a.x == 1);
+    REQUIRE(a.y == 0);
+    REQUIRE(a.width == 10);
+    REQUIRE(a.height == 12);
+}
+...
+\end{lstlisting}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.28\linewidth}
+  \small
+  \begin{enumerate} 
+    \item \textcolor{activecolor}{Write a test}
+    \item \textcolor{deadcolor}{Make it compile}
+    \item \textcolor{deadcolor}{Run it (fails)}
+    \item \textcolor{deadcolor}{Make it pass}
+    \item \textcolor{deadcolor}{Improve quality}
+  \end{enumerate} 
+\end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{test\_rectangle.cpp}
+\begin{minipage}[t]{0.48\linewidth}
+\begin{lstlisting}
+#include "doctest.h"
+#include "rectangle.h"
+
+TEST_CASE("Create rectangle") {
+    Rectangle a(1, 0, 10, 12);
+    REQUIRE(a.x == 1);
+    REQUIRE(a.y == 0);
+    REQUIRE(a.width == 10);
+    REQUIRE(a.height == 12);
+}
+...
+\end{lstlisting}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.28\linewidth}
+  \small
+  \begin{enumerate} 
+    \item \textcolor{deadcolor}{Write a test}
+    \item \textcolor{activecolor}{Make it compile}
+    \item \textcolor{deadcolor}{Run it (fails)}
+    \item \textcolor{deadcolor}{Make it pass}
+    \item \textcolor{deadcolor}{Improve quality}
+  \end{enumerate} 
+\end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Run doctest}
+\begin{minipage}[t]{0.48\linewidth}
+test cases: 6 | 5 passed | 1 failed\\
+assertions: 9 | 8 passed | 1 failed\\
+\end{minipage}\hfill
+\begin{minipage}[t]{0.28\linewidth}
+  \small
+  \begin{enumerate} 
+    \item \textcolor{deadcolor}{Write a test}
+    \item \textcolor{deadcolor}{Make it compile}
+    \item \textcolor{activecolor}{Run it (fails)}
+    \item \textcolor{deadcolor}{Make it pass}
+    \item \textcolor{deadcolor}{Improve quality}
+  \end{enumerate} 
+\end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{rectangle.cpp}
+\begin{minipage}[t]{0.48\linewidth}
+\begin{lstlisting}
+#include "rectangle.h"
+
+Rectangle::Rectangle(int x, int y, 
+                     int width, int height)
+    : x(y), y(y), width(width), height(height) {}
+
+...
+\end{lstlisting}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.28\linewidth}
+  \small
+  \begin{enumerate} 
+    \item \textcolor{deadcolor}{Write a test}
+    \item \textcolor{deadcolor}{Make it compile}
+    \item \textcolor{deadcolor}{Run it (fails)}
+    \item \textcolor{activecolor}{Make it pass}
+    \item \textcolor{deadcolor}{Improve quality}
+  \end{enumerate} 
+\end{minipage}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{rectangle.cpp}
+\begin{minipage}[t]{0.48\linewidth}
+\begin{lstlisting}
+#include "rectangle.h"
+
+Rectangle::Rectangle(int x, int y, 
+                     int width, int height)
+    : x(x), y(y), width(width), height(height) {}
+
+...
+\end{lstlisting}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.28\linewidth}
+  \small
+  \begin{enumerate} 
+    \item \textcolor{deadcolor}{Write a test}
+    \item \textcolor{deadcolor}{Make it compile}
+    \item \textcolor{deadcolor}{Run it (fails)}
+    \item \textcolor{activecolor}{Make it pass}
+    \item \textcolor{deadcolor}{Improve quality}
+  \end{enumerate} 
+\end{minipage}
+\end{frame}
