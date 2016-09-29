@@ -9,10 +9,10 @@ include(../UseLATEX/UseLATEX.cmake)
 # UseLATEX.cmake the contents of this file is actually included
 # in the document.
 
-set(IMAGES background2.jpg background.jpg)
+set(IMAGES background2.jpg background.jpg wtfm.jpg tdd.jpg)
 
 add_latex_document(presentation.tex
   INPUTS CMakeLists.txt
   IMAGES ${IMAGES}
-  INPUTS qualitycode.tex badcode.tex tests.tex tdd-def.tex tdd-conclusion.tex tdd-example.tex
+  INPUTS tdd-motivation.tex qualitycode.tex badcode.tex tests.tex tdd-def.tex tdd-conclusion.tex tdd-example.tex
 )

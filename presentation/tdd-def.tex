@@ -1,17 +1,41 @@
+
+\begin{frame}
+  \frametitle{Test}
+  \begin{minipage}[t]{0.48\linewidth}
+  Production code first:
+  \begin{itemize}
+     \item Test take extra time
+     \item Hard to test
+     \item Harder to test
+     \item Untestable by design
+     \item Long bug tail
+  \end{itemize}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.48\linewidth}
+  Test code first:
+  \begin{itemize}
+     \item Test take no extra time
+     \item Easy to test
+     \item Hard to test
+     \item Testable by design
+     \item Short bug tail
+     \item Requires extra skill
+  \end{itemize}
+  \end{minipage}
+\end{frame}
+
 \begin{frame}
   \frametitle{Test Driven Development}
     \begin{minipage}[t]{0.48\linewidth}
+        % Каква е целта
         Цел: Test Suite
         \begin{itemize}
             \item Unit tests
             \item Integration tests
         \end{itemize}
-        Следствие:
-        \begin{itemize}
-            \item Работещ код
-        \end{itemize}
     \end{minipage}\hfill
     \begin{minipage}[t]{0.48\linewidth}
+        % Как да я постигнем
         \begin{enumerate} 
             \item Write a test
             \item Make it compile
