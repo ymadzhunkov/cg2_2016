@@ -17,17 +17,18 @@
 \usepackage{xmpmulti}
 \usepackage{tikz}
 
-\author[Йордан Маджунков]{Йордан Маджунков}
-\title[Test Driven Development\hspace{2em}\insertframenumber/\inserttotalframenumber]{Test Driven Development:\\ Сътворение на качествен код}
+\author[Yordan Madzhunkov]{Yordan Madzhunkov}
+\title[Test Driven Development\hspace{2em}\insertframenumber/\inserttotalframenumber]{Test Driven Development}
 \date{29 Октомври 2016} %leave out for today's date to be insterted
 
-\usebackgroundtemplate {\includegraphics[width=\paperwidth, height=\paperheight]{background.jpg}}
+\usebackgroundtemplate {\includegraphics[width=\paperwidth, height=\paperheight]{background2.jpg}}
 \defbeamertemplate*{title page}{customized}[1][] {
 
-\vspace{5cm}
+%\vspace{5cm}
 \begin{center}
 \usebeamerfont{title} \Large \inserttitle\\
 \end{center}
+\vspace{1cm}
 \begin{center}
 \usebeamerfont{author} \small \insertauthor
 \end{center}
@@ -51,22 +52,29 @@
 }
 %\renewcommand*{\thesubfigure}{}
 
+\begin{frame}
+\frametitle{Motivation}
+\begin{center}
+\includegraphics[height=0.8\paperheight]{dev_speed.png}
+\end{center}
+\end{frame}
+
 
 \begin{frame}
-\frametitle{Test Driven Development:\\ Сътворение на качествен код}
+\frametitle{How to write quaility code}
 \begin{enumerate} 
-    \item Какво е качествен код ?\pause
-    \item Какво пречи да сътворяваме качествен код ?\pause
-    \item Какво е Test Driven Development ?\pause
-    \item Как да започнем да прилагаме TDD ?\pause
-    \item Въпроси и дискусия 
+    \item What is quality code ?\pause
+    \item What privets as from writing quality code?\pause
+    \item What is Test Driven Development ?\pause
+    \item How to start applying TDD ?\pause
+    \item Q \& A 
 \end{enumerate} 
 \end{frame}
 
 \include{qualitycode}
 \include{tests}
 \include{tdd-def}
-\include{tdd-example}
+%\include{tdd-example}
 \include{tdd-conclusion}
 
 

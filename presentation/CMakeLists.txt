@@ -9,7 +9,7 @@ include(../UseLATEX/UseLATEX.cmake)
 # UseLATEX.cmake the contents of this file is actually included
 # in the document.
 
-set(IMAGES background2.jpg background.jpg wtfm.jpg tdd.jpg)
+set(IMAGES background2.jpg background.jpg wtfm.jpg tdd.jpg dev_speed.png)
 
 add_latex_document(presentation.tex
   INPUTS CMakeLists.txt
